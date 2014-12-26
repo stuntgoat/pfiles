@@ -50,4 +50,7 @@ class File(object):
 
         """
         for fp in self.files.itervalues():
+            fp.flush()
             fp.close()
+
+        self.files = {}
